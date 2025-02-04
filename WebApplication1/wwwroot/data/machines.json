@@ -21,9 +21,9 @@
   },
   {
     "Id": 0,
-    "Nom": "squat",
+    "Nom": "Squat",
     "Muscles": [
-      "quadricep"
+      "Quadriceps"
     ],
     "PoidsActuel": 100,
     "PoidsPlaque": 0
