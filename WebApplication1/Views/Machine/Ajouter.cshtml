@@ -1,0 +1,44 @@
+@model WebApplication1.Models.Machine
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter une machine</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+<div class="container">
+    <h1>Ajouter une machine</h1>
+    <form method="post" enctype="multipart/form-data">
+        <div>
+            <label for="Nom">Nom de la machine (sans accents) :</label>
+            <input type="text" name="Nom" required />
+        </div>
+
+        <div>
+            <label for="Muscles">Muscles travaillés (séparés par des virgules) :</label>
+            <input type="text" name="Muscles" required />
+        </div>
+
+        <div>
+            <label for="PoidsActuel">Poids actuel (kg) :</label>
+            <input type="number" name="PoidsActuel" step="0.1" required />
+        </div>
+
+        <div>
+            <label for="PoidsPlaque">Poids d'une plaque (kg) :</label>
+            <input type="number" name="PoidsPlaque" step="0.1" required />
+        </div>
+
+        <div>
+            <label for="imageFile">Image (format JPG uniquement) :</label>
+            <input type="file" name="imageFile" accept=".jpg" required />
+        </div>
+
+        <button type="submit">Ajouter la machine</button>
+    </form>
+</div>
+</body>
+</html>

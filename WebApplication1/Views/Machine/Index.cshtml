@@ -1,0 +1,47 @@
+﻿@model List<WebApplication1.Models.Machine>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salle de sport</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+<a href="/ajout/" class="add-machine-btn">Ajouter une machine</a>
+<div class="container">
+    <h1>Mes machines</h1>
+    <div class="machines">
+        @foreach (var machine in Model)
+        {
+            <div class="machine">
+                <div class="image">
+                    <img src="@Url.Content($"~/images/imageId{machine.Id}.jpg")" alt="@machine.Nom"/>
+
+                </div>
+                <div class="details">
+                    <h2>@machine.Nom.Replace("_", " ")</h2>
+                    <p><strong>Muscles travaillés :</strong> @string.Join(", ", machine.Muscles)</p>
+                    <p><strong>Poids actuel :</strong> @machine.PoidsActuel kg</p>
+
+                    <form method="post" action="/Machine/MettreAJourPoids">
+                        <input type="hidden" name="id" value="@machine.Id"/>
+                        <input type="number" name="poids" value="@machine.PoidsActuel" step="0.1" required/>
+                        <button type="submit">Mettre à jour</button>
+                    </form>
+
+                    <form method="post" action="/Machine/ModifierPoids">
+                        <input type="hidden" name="id" value="@machine.Id"/>
+                        <p>
+                            <button name="delta" value="-@machine.PoidsPlaque">-@machine.PoidsPlaque kg</button>
+                            <button name="delta" value="@machine.PoidsPlaque">+@machine.PoidsPlaque kg</button>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+</body>
+</html>

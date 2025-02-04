@@ -1,0 +1,31 @@
+[
+  {
+    "Id": 1,
+    "Nom": "Presse a jambes",
+    "Muscles": [
+      "Quadriceps",
+      "Fessiers"
+    ],
+    "PoidsActuel": 169,
+    "PoidsPlaque": 7
+  },
+  {
+    "Id": 2,
+    "Nom": "Developpe couche",
+    "Muscles": [
+      "Pectoraux",
+      "Triceps"
+    ],
+    "PoidsActuel": 325.3,
+    "PoidsPlaque": 2.3
+  },
+  {
+    "Id": 0,
+    "Nom": "squat",
+    "Muscles": [
+      "quadricep"
+    ],
+    "PoidsActuel": 100,
+    "PoidsPlaque": 0
+  }
+]
